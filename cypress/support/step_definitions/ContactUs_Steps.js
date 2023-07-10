@@ -43,3 +43,17 @@ When('I type a specific email address {string}', (emailAddress) => {
 When('I type a specific comment {string} and a number {int} within a comment field', (commentText, commentNumber) => {
     cy.get('[name="message"]').type(commentText + " " + commentNumber);
 })
+
+When('I type a first name {word} and a last name {string}', (firstName, lastName) => {
+    cy.get('[name = "first_name"]').type(firstName);
+    cy.get('[name="last_name"]').type(lastName);
+})
+
+When('I type an email address {string} and a comment {string}', (emailAddress, commentText) => {
+    cy.get('[name="email"]').type(emailAddress);
+    cy.get('[name="message"]').type(commentText);
+})
+
+Then('I should be presented with a header text {string}', (headerMessage) => {
+    cy.xpath("//h1 | //body").contains(headerMessage)
+})
