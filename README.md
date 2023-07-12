@@ -7,7 +7,7 @@ Run
 Then include in your project's support file
 `require('cypress-xpath')`
 
-# Use of Cypress Xpath.
+## Use of Cypress Xpath.
 
 After installation your cy object will have xpath command.
 
@@ -24,3 +24,14 @@ As with other cy commands, it is scoped by cy.within().
 To properly load the types for cy.xpath command, add to your spec file the following comment.
 
 `/// <reference types="cypress-xpath" />`
+
+#Running specified tag
+
+In command line pass the command:
+ `npx cypress run -e TAGS='@your_tag' --headed`
+
+Multiple tags can be used. Is possible to skip some specific tag, adding before it `and not`. 
+`npx cypress run -e TAGS='(@your_tag_1 or @your_tag_2) and not @tag_to_ignore' --headed`
+
+Possible to specify feature file to run with command
+`npx cypress run cypress/e2e/*.feature --headed`
