@@ -4,7 +4,13 @@
   "description": "cypress-cucumber-automation-framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "full-regression-headed-chrome": "cypress run --headed --browser chrome --spec 'cypress/e2e/*.feature'",
+    "full-regression-headless-chrome": "cypress run --browser chrome --spec 'cypress/e2e/*.feature'",
+    "full-regression-headed-firefox": "cypress run --headed --browser firefox --spec 'cypress/e2e/*.feature'",
+    "contact-us-test-headed-chrome": "cypress run --headed --browser chrome --spec 'cypress/e2e/Contact_Us.feature'",
+    "contact-us-test": "cypress run -e TAGS=\"@contact_us\"",
+    "login-us-test": "cypress run -e TAGS=\"@login\""
   },
   "author": "Evgenij Chirkun",
   "license": "ISC",
