@@ -25,7 +25,7 @@ To properly load the types for cy.xpath command, add to your spec file the follo
 
 `/// <reference types="cypress-xpath" />`
 
-#Running specified tag
+# Running specified tag
 
 In command line pass the command:
  `npx cypress run -e TAGS='@your_tag' --headed`
