@@ -42,14 +42,14 @@ Possible to specify feature file to run with command
 
 Go in `package.json` 
 add in section `cypress-cucumber-preprocessor` lines
-`"html": {`
-    `"enabled": true,`
-    `"output": "cypress/reports/cucumber-html/cucumber-report.html"`
-`},`
-`"messages": {`
-`      "enabled": true,`
-`      "output": "cypress/reports/cucumber-ndjson/cucumber-report.json"`
-`    }`
+`"html": {
+    "enabled": true,
+    "output": "cypress/reports/cucumber-html/cucumber-report.html"
+},
+"messages": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-ndjson/cucumber-report.json"
+    }`
 
 Report won't be created on `npx cypress open` and running tests. Instead should be used `npx cypress run` command.
 
