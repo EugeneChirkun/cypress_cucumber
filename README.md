@@ -62,11 +62,11 @@ All instructions can be found here: https://github.com/cucumber/json-formatter#r
 Then go in `package.json` 
 add in section `cypress-cucumber-preprocessor` lines
 
-`"json": {`
-`      "enabled": true,`
-`      "formatter": "cucumber-json-formatter",`
-`      "output": "cypress/reports/cucumber-json/cucumber-report.json"`
-`    }`
+`"json": {
+      "enabled": true,
+      "formatter": "cucumber-json-formatter",
+      "output": "cypress/reports/cucumber-json/cucumber-report.json"
+    }`
 
 ## Multiple Cucumber HTML Reporter
 
