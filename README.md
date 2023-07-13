@@ -35,3 +35,39 @@ Multiple tags can be used. Is possible to skip some specific tag, adding before 
 
 Possible to specify feature file to run with command
 `npx cypress run cypress/e2e/*.feature --headed`
+
+# Reporting
+
+## HTML-reports
+
+Go in `package.json` 
+add in section `cypress-cucumber-preprocessor` lines
+`"html": {`
+    `"enabled": true,`
+    `"output": "cypress/reports/cucumber-html/cucumber-report.html"`
+`},`
+`"messages": {`
+`      "enabled": true,`
+`      "output": "cypress/reports/cucumber-ndjson/cucumber-report.json"`
+`    }`
+
+Report won't be created on `npx cypress open` and running tests. Instead should be used `npx cypress run` command.
+
+## JSON-reports
+
+To have possibility to generate reports as *.json file, "Cucumber Standalone JSON Formatter" needed.
+
+All instructions can be found here: https://github.com/cucumber/json-formatter#readme
+
+Then go in `package.json` 
+add in section `cypress-cucumber-preprocessor` lines
+
+`"json": {`
+`      "enabled": true,`
+`      "formatter": "cucumber-json-formatter",`
+`      "output": "cypress/reports/cucumber-json/cucumber-report.json"`
+`    }`
+
+## Multiple Cucumber HTML Reporter
+
+All instructions can be found here: https://www.npmjs.com/package/multiple-cucumber-html-reporter
