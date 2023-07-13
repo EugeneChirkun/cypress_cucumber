@@ -11,23 +11,29 @@ Then include in your project's support file
 
 After installation your cy object will have xpath command.
 
-`it('finds list items', () => {  <br><br />
-        cy.xpath('//ul[@class="todo-list"]//li').should('have.length', 3); <br><br />
-            })`
+```javascript
+it('finds list items', () => { 
+        cy.xpath('//ul[@class="todo-list"]//li').should('have.length', 3);
+            })
+```
 
 You can also chain xpath off of another command.
 
-`it('finds list items', () => { <br><br />
-    cy.xpath('//ul[@class="todo-list"]').xpath('./li').should('have.length', 3); <br><br />
-    });`
+```javascript
+it('finds list items', () => {
+    cy.xpath('//ul[@class="todo-list"]').xpath('./li').should('have.length', 3);
+    });
+```
 
 As with other cy commands, it is scoped by cy.within().
 
-`it('finds list items', () => { <br><br />
-    cy.xpath('//ul[@class="todo-list"]').within(() => { <br><br />
-        cy.xpath('./li').should('have.length', 3); <br><br />
-    }); <br><br />
-    });`
+```javascript
+it('finds list items', () => {
+    cy.xpath('//ul[@class="todo-list"]').within(() => {
+        cy.xpath('./li').should('have.length', 3);
+    });
+    });
+```
 
 To properly load the types for cy.xpath command, add to your spec file the following comment.
 
@@ -50,14 +56,17 @@ Possible to specify feature file to run with command
 
 Go in `package.json` 
 add in section `cypress-cucumber-preprocessor` lines
-`"html": { <br><br />
-        "enabled": true, <br><br />
-            "output": "cypress/reports/cucumber-html/cucumber-report.html" <br><br />
-}, <br><br />
-"messages": { <br><br />
-      "enabled": true, <br><br />
-      "output": "cypress/reports/cucumber-ndjson/cucumber-report.json" <br><br />
-    }`
+
+```javascript
+"html": {
+        "enabled": true,
+            "output": "cypress/reports/cucumber-html/cucumber-report.html"
+},
+"messages": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-ndjson/cucumber-report.json"
+    }
+```
 
 Report won't be created on `npx cypress open` and running tests. Instead should be used `npx cypress run` command.
 
@@ -70,11 +79,13 @@ All instructions can be found here: https://github.com/cucumber/json-formatter#r
 Then go in `package.json` 
 add in section `cypress-cucumber-preprocessor` lines
 
-`"json": { <br><br />
-      "enabled": true, <br><br />
-      "formatter": "cucumber-json-formatter", <br><br />
-      "output": "cypress/reports/cucumber-json/cucumber-report.json" <br><br />
-    }`
+```javascript
+"json": {
+      "enabled": true,
+      "formatter": "cucumber-json-formatter",
+      "output": "cypress/reports/cucumber-json/cucumber-report.json"
+    }
+```
 
 ## Multiple Cucumber HTML Reporter
 
