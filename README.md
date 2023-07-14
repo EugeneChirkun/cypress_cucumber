@@ -1,4 +1,11 @@
-# cypress_cucumber
+# Project: cypress_cucumber
+
+# cypress-cucumber-preprocessor
+
+To install:
+`npm install @badeball/cypress-cucumber-preprocessor`
+
+For more info read: https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/quick-start.md
 
 # Cypress Xpath.
 Is deprecated, but still works.
@@ -70,7 +77,7 @@ add in section `cypress-cucumber-preprocessor` lines
 
 Report won't be created on `npx cypress open` and running tests. Instead should be used `npx cypress run` command.
 
-## JSON-reports
+## Cucumber JSON formatter
 
 To have possibility to generate reports as *.json file, "Cucumber Standalone JSON Formatter" needed.
 
@@ -90,3 +97,8 @@ add in section `cypress-cucumber-preprocessor` lines
 ## Multiple Cucumber HTML Reporter
 
 All instructions can be found here: https://www.npmjs.com/package/multiple-cucumber-html-reporter
+
+Works for tests, executed from terminal. First, execute
+`npx cypress run` or `npm run your_script_name`
+Then run
+`node cucumber-html-report.js` to create report

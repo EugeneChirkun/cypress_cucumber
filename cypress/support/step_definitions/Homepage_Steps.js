@@ -1,15 +1,23 @@
+/// <reference types="cypress"/>
 import { Given, When } from "@badeball/cypress-cucumber-preprocessor";
 
-const url = "http://www.webdriveruniversity.com/";
+import HomePage from "../page_objects/HomePage";
+
+const homePage = new HomePage();
+
 
 Given('I navigate to the WebdriverUniversity homepage', () => {
-    cy.visit(url);
+    homePage.navigate("");
 })
 
 When('I click on the contact us button', () => {
-    cy.get('#contact-us').invoke('removeAttr', 'target').click();
+    homePage.clickOnContactUsBtn();
 })
 
 When('I click on the login portal button', () => {
-    cy.get('#login-portal').invoke('removeAttr', 'target').click();
+    homePage.clickOnLoginBtn();
+})
+
+When('I click on the to do list button', () => {
+    homePage.clickOnToDoListBtn();
 })

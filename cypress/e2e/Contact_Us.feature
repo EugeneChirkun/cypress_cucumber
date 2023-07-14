@@ -3,39 +3,29 @@
 Feature: WebdriverUniversite - Contact Us Page
 
     Background: Preconditions
-        Given I navigate to the WebdriverUniversity homepage
-        When I click on the contact us button
+        Given Given I navigate to the WebdriverUniversity contact us page
 
     Scenario: Valid Contact Us Form Submission
 
-        And I type a first name
-        And I type a last name
-        And I enter an email address
-        And I type a comment
+        And I type a first name "Danny"
+        And I type a last name "Boile"
+        And I type an email address "dboile@testmail.com"
+        And I type a comment "this is my comment text 1233 for Valid Contact Us Form Submission" within a comment field
         And I click on the submit button
         Then I should be presented with a successfull contact us submission message
 
     Scenario: Invalid Contact Us Form Submission
 
-        And I type a first name
-        And I type a last name
-        And I type a comment
+        And I type a first name "Norah"
+        And I type a last name "Jones"
+        And I type a comment "this is my comment text 1233 for Invalid Contact Us Form Submission" within a comment field
         And I click on the submit button
         Then I should be presented with a unsuccessfull contact us submission message
 
-    Scenario: Valid Contact Us Form Submission - Using specific data
-
-        And I type a specific first name "Michael"
-        And I type a specific last name "Dowson"
-        And I type a specific email address "mdowson@testmail.com"
-        And I type a specific comment "this is my comment text" and a number 46545121 within a comment field
-        And I click on the submit button
-        Then I should be presented with a successfull contact us submission message
-
-@smoke
+    @smoke
     Scenario Outline: Validate "Contact us" page
 
-        And I type a first name <firstName> and a last name '<lastName>'
+        And I type a first name '<firstName>' and a last name '<lastName>'
         And I type an email address '<emailAddress>' and a comment '<commentText>'
         And I click on the submit button
         Then I should be presented with a header text '<headerMessage>'
