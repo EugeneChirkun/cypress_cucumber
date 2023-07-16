@@ -1,5 +1,23 @@
 # Project: cypress_cucumber
 
+# Prerequisites
+Ensure, that you have Node.js installed and Node Package Manager installed. Run in Command Prompt commands:
+
+`node -v`
+`npm -v`
+
+# Project installation and initialisation
+
+Download project to your local computer;
+Open Command Prompt in project folder;
+Run command to initialise project
+`npm init -y`
+Run command to install Cypress
+`npm install cypress`
+Run commands to check version and verify Cypress
+`npm cypress -v`
+`npm cypress verify`
+
 # cypress-cucumber-preprocessor
 
 To install:
